@@ -43,6 +43,17 @@ header {
   margin: 2rem auto;
 }
 
+.todoListHead{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todoList td{
+  padding: 0.3rem 1rem;
+}
+
+
 .todo {
   margin: 0.4rem;
   display: flex;
@@ -71,6 +82,10 @@ header {
   max-height: 1.8rem;
   padding: 0.3rem 4rem;
   background: white;
+}
+
+.todoText td{
+  padding: 0.3rem 1rem;
 }
 
 

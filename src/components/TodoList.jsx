@@ -21,11 +21,22 @@ export const TodoList = ({ taskList, setTaskList }) => {
 
   return (
     <div className='todoList'>
+      <tr　className='todoListHead'>
+        <td>日付</td>
+        <td>開始時間</td>
+        <td>終了時間</td>
+        <td>件名</td>
+      </tr>
       <div className='todos'>
         {taskList.map((task, index) => (
           <div className={`todo ${task.completed ? "completed" : ""}`} key={index}>
             <div className="todoText">
-              <span>{task.text}</span>
+              <tr>
+                <td>{task.scheduleDate}</td>
+                <td>{task.scheduleStartTime}</td>
+                <td>{task.scheduleEndTime}</td>
+                <td>{task.scheduleTitle}</td>
+              </tr>
             </div>
             <div className="icons">
               <button>

@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+
+import { db } from '.././firebase';
+import { deleteDoc, doc} from 'firebase/firestore';
 
 export const TodoList = ({ taskList, setTaskList }) => {
 
-  const handleDelete = (id) => {
-    setTaskList(taskList.filter((task) => task.id !== id));
+  const handleDelete = async (id) => {
+    await deleteDoc(doc(db,'schedules',id));
   }
 
   const handleComplete = (id) => {

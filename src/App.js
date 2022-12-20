@@ -4,7 +4,7 @@ import { Title } from './components/Title';
 import { InputForm } from './components/InputForm';
 import { TodoList } from './components/TodoList';
 import { db } from './firebase';
-import { query, collection, onSnapshot } from 'firebase/firestore';
+import { query, collection, onSnapshot, orderBy } from 'firebase/firestore';
 
 function App() {
 
@@ -13,7 +13,10 @@ function App() {
 
 
   useEffect(() => {
-    const q = query(collection(db, 'schedules'));
+    const q = query(collection(db, 'schedules'),
+      orderBy('scheduleYear'), orderBy('scheduleMonth'),
+      orderBy('scheduleDay'), orderBy('scheduleStartTimeHour'),
+      orderBy('scheduleStartTimeMinute'));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let todosArr = [];
       querySnapshot.forEach(doc => {

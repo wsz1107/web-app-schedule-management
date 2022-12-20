@@ -24,7 +24,7 @@ export const TodoList = ({ taskList, setTaskList }) => {
 
   return (
     <div className='todoList'>
-      <tr　className='todoListHead'>
+      <tr className='todoListHead'>
         <td>日付</td>
         <td>開始時間</td>
         <td>終了時間</td>
